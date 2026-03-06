@@ -7,7 +7,7 @@ class Restaurante:
         self._nome = nome.title()
         self._categoria = categoria.upper()
         self._ativo = False
-        self.avaliacao = []
+        self._avaliacao = []
         Restaurante.restaurantes.append(self)
 
     def __str__(self):
@@ -15,9 +15,9 @@ class Restaurante:
 
     @classmethod
     def listar_restaurantes(cls):
-        print(f'{'Nome do restaurante'.ljust(25)} / {'Categoria'.ljust(25)} / {'Status'}')
+        print(f'{'Nome do restaurante'.ljust(25)} / {'Categoria'.ljust(25)} / {'Status'} / {'Avaliação'.ljust(25)}')
         for restaurante in cls.restaurantes:
-            print(f'{restaurante._nome.ljust(25)} / {restaurante._categoria.ljust(25)} / {restaurante._ativo}')
+            print(f'{restaurante._nome.ljust(25)} / {restaurante._categoria.ljust(25)} / {restaurante._ativo} / {str(restaurante.media_avaliacoes.ljust(25))}')
 
     @property
     def ativo(self):
