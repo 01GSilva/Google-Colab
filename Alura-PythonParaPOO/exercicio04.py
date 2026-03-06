@@ -22,16 +22,10 @@ class Livro:
 
     @classmethod
     def listar_livros(cls):
-        print(f'{'Título'.ljust(27)} | {'Autor'.ljust(27)} | {'Ano de Publicação'.ljust(27)} | {'Disponivel'}')
+        print(f'{'Título'.ljust(20)} | {'Autor'.ljust(20)} | {'Publicação'.ljust(20)} | {'Disponivel'}')
         for livro in cls.livros:
             if livro._disponivel == True:
                 status = '☑'
             else:
                 status = '☐'
-            print(f'{livro._titulo.ljust(27)} | {livro._autor.ljust(27)} | {str(livro._ano_publicacao).ljust(27)} | {status}')
-
-
-livro1 = Livro('senhor dos aneis', 'Tolkien', 1900)
-livro2 = Livro('As cronicas de gelo e fogo', 'George martin', 1990)
-
-Livro.listar_livros()
+            print(f'{livro._titulo.ljust(20)} | {livro._autor.ljust(20)} | {str(livro._ano_publicacao).ljust(20)} | {status}')
